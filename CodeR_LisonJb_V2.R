@@ -4,13 +4,13 @@
 
 # Packages
 # install.packages("survival") (si nécessaire)
+# install.packages("DMwR") (si nécessaire)
 library(survival)
 library(plyr)
 library(DMwR)
 library(boot)
 library(mlogit)
 library(VGAM)
-
 ## If using it in another environment
 # setwd("path_to_data")
 
@@ -18,7 +18,6 @@ library(VGAM)
 
 #Chemin Lison : //paradis/eleves/LGrappin/Bureau
 # Chemin JB : /Users/eymeoudjean-benoit/Dropbox
-CoreTable_training_raw <- read.csv("data/CoreTable_training.csv",header=TRUE)  
 CoreTable_training <- read.csv("data/CoreTable_training.csv",header=TRUE,na.strings=c("","."),dec=".",stringsAsFactors =FALSE)  
 
 
@@ -108,11 +107,12 @@ CHECK_NA <- function(base)
       pct.missing_2[i,2] <- 100*sum(is.na(base[[i]]))/length(base[[i]])
     }
   pct.missing_2=as.data.frame(pct.missing_2)
-  pct.missing_2=rename(pct.missing_2, c("V1"="Variable", "V2"="Pourcentage NA"))
+  pct.missing_2=rename(pct.missing_2, c("V1"="Variable", "V2"="Pourcentage_NA"))
   print(pct.missing_2)
 }
 CHECK_NA(CoreTable_training)
-
+test = CHECK_NA(CoreTable_training)
+test[with(test,order(Pourcentage_NA)),]
 
 # Verif sur BMI
 sum(is.na(CoreTable_training$BMI))/length(CoreTable_training$BMI)*100
