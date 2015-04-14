@@ -40,8 +40,37 @@ plot(predict(pen,penalized=nki70[,8:77]))
 
 
 ### Own example
-GenerateSurvData
+source("functions/GenerateSurvData.R")
+data <- GenerateSurvData(n=500,p=300,s=5)
 
-Cox.model <- penalized(Surv(time, event), penalized = nki70[,8:77],
-                       unpenalized = ~ER+Age+Diam+N+Grade, data = nki70, lambda1 = 10,
-                       model="cox")
+Cox.model <- penalized(Surv(data$y, data$cens), penalized = data$X,
+                      lambda1 = 10, steps=20,
+                       model="cox",
+                      standardize=T)
+show(Cox.model)
+coefficients(Cox.model, "penalized")
+plotpath(Cox.model)
+
+### Cross-validation
+CV.Cox <- optL1(Surv(data$y, data$cens), penalized = data$X,
+                    fold = 5,
+                    model="cox",
+              standardize=T)
+coefficients(CV.Cox)
+plot(CV.Cox$predictions)
+
+prof <- profL1(Surv(data$y, data$cens), penalized = data$X,
+               fold = 5,
+               model="cox",
+               standardize=T, steps=10)
+plot(prof$lambda, prof$cvl, type="l")
+
+### At optimal lambda value
+LambdaOpt <- CV.Cox$lambda
+Cox.modelOpt <- penalized(Surv(data$y, data$cens), penalized = data$X,
+                       lambda1 = LambdaOpt,
+                       model="cox",
+                       standardize=T)
+plot(data$y,lin.pred(Cox.modelOpt))
+
+
