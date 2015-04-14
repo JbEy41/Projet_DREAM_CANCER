@@ -1,4 +1,4 @@
-Var Name;Type;Length;Label;Comment;Comment
+Var Name;Type;Length;Label;Comment;Table
 DOMAIN;CHAR;2;Domain (table) Name Abbreviation;;CoreTable
 STUDYID;CHAR;8;Study Identifier;Value: EFC6546, CELGENE, ASCENT2, AZ;CoreTable
 RPT;CHAR;18;Patient ID (or dummy id);;CoreTable
