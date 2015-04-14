@@ -11,11 +11,15 @@ library(boot)
 library(mlogit)
 library(VGAM)
 
+## If using it in another environment
+# setwd("path_to_data")
+
+
 
 #Chemin Lison : //paradis/eleves/LGrappin/Bureau
 # Chemin JB : /Users/eymeoudjean-benoit/Dropbox
-CoreTable_training_raw <- read.csv("/Users/eymeoudjean-benoit/Dropbox/AppGenomique/data/CoreTable_training.csv",header=TRUE)  
-CoreTable_training <- read.csv("/Users/eymeoudjean-benoit/Dropbox/AppGenomique/data/CoreTable_training.csv",header=TRUE,na.strings=c("","."),dec=".",stringsAsFactors =FALSE)  
+CoreTable_training_raw <- read.csv("data/CoreTable_training.csv",header=TRUE)  
+CoreTable_training <- read.csv("data/CoreTable_training.csv",header=TRUE,na.strings=c("","."),dec=".",stringsAsFactors =FALSE)  
 
 
 #########################################################################################
