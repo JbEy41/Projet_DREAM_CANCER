@@ -27,3 +27,7 @@ CHECK_NA <- function(base)
 
 
 
+## function de passage des factors aux numeriques
+
+
+
