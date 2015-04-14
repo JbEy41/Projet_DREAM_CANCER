@@ -1,0 +1,248 @@
+Var Name;Type;Length;Label;Comment;Comment
+DOMAIN;CHAR;2;Domain (table) Name Abbreviation;;CoreTable
+STUDYID;CHAR;8;Study Identifier;Value: EFC6546, CELGENE, ASCENT2, AZ;CoreTable
+RPT;CHAR;18;Patient ID (or dummy id);;CoreTable
+LKADT_P;NUM;8;Last Known Alive Dt Period in days;Q1 dependent variable ;CoreTable
+DEATH;CHAR;3;Patient Died Flag;Q1 dependent variable;CoreTable
+DISCONT;CHAR;1;Discontinue Flag;Q2 dependent variable;CoreTable
+ENDTRS_C;CHAR;30;Discontinue Trt Reason (category);dep. var. reference variables, details see “Creation of dependent variable for Q2.docx” in the Challenge Data folder;CoreTable
+ENTRT_PC;NUM;8;Discontinue Trt Date Period in days;Q2 dependent variable ;CoreTable
+PER_REF;CHAR;30;Reference Day used for ENTRT_PC;dep. var. reference variables;CoreTable
+LKADT_REF;CHAR;30;Reference Day used for LKADT_P;dep. var. reference variables;CoreTable
+LKADT_PER;CHAR;10;Period unit for period values, LKADT_P;dep. var. reference variables;CoreTable
+GLEAS_DX;NUM;8;Gleason Score at Initial diagnosis, see detail definition in wiki data description;covariates only available in ASCENT2;CoreTable
+TSTAG_DX;CHAR;5;Primary Tumor-stage Score at Initial diagnosis, see detail definition in wiki data description;covariates only available in ASCENT2;CoreTable
+AGEGRP;CHAR;15;Age Group;AZ have 3 groups, while other trials have actual age up to 85.;CoreTable
+AGEGRP2;CHAR;15;Age Group (3 category);3 category: 18-64, 65-74, 75+;CoreTable
+RACE_C;CHAR;50;Race; ;CoreTable
+BMI;NUM;8;Baseline Body Mass Index (kg/m2);;CoreTable
+HEIGHTBL;NUM;8;Baseline Height in cm;;CoreTable
+HGTBLCAT;CHAR;20;Baseline Height in cm category;;CoreTable
+WEIGHTBL;NUM;8;Baseline Weight in kg;;CoreTable
+WGTBLCAT;CHAR;20;Baseline Weight in kg category;;CoreTable
+REGION_C;CHAR;30;Region of the World;;CoreTable
+SMOKE;CHAR;5;Ever Smoked;covariates only available in ASCENT2;CoreTable
+SMOKFREQ;CHAR;50;Smoking Frequency;covariates only available in ASCENT2;CoreTable
+SMOKSTAT;CHAR;30;Current Smoking Status;covariates only available in ASCENT2;CoreTable
+ECOG_C;CHAR;100;Baseline Patient Performance Status;0-Fully active, 1-Restricted activity, 2-No activity, capable of selfcare, 3- limited selfcare, 4-bed-bound (detail see wiki data description);CoreTable
+TRT1_ID;CHAR;20;Treatment 1 product ;trial related information;CoreTable
+TRT2_ID;CHAR;20;Treatment 2 product (docetaxel);trial related information;CoreTable
+TRT3_ID;CHAR;20;Treatment 3 product (prednisone except AZ);trial related information;CoreTable
+ALP;NUM;8;BASELINE LAB VALUE: ALKALINE PHOSPHATASE U/L;;CoreTable
+ALT;NUM;8;BASELINE LAB VALUE: ALANINE TRANSAMINASE  U/L;;CoreTable
+AST;NUM;8;BASELINE LAB VALUE: ASPARTATE AMINOTRANSFERASE U/L;;CoreTable
+CA;NUM;8;BASELINE LAB VALUE: CALCIUM MMOL/L;;CoreTable
+CREAT;NUM;8;BASELINE LAB VALUE: CREATININE UMOL/L;;CoreTable
+HB;NUM;8;BASELINE LAB VALUE: HEMOGLOBIN G/DL;;CoreTable
+LDH;NUM;8;BASELINE LAB VALUE: LACTATE DEHYDROGENASE U/L;;CoreTable
+NEU;NUM;8;BASELINE LAB VALUE: NEUTROPHILS 10^9/L;;CoreTable
+PLT;NUM;8;BASELINE LAB VALUE: PLATELET COUNT 10^9/L;;CoreTable
+PSA;NUM;8;BASELINE LAB VALUE: PROSTATE SPECIFIC ANTIGEN NG/ML;;CoreTable
+TBILI;NUM;8;BASELINE LAB VALUE: TOTAL BILIRUBIN UMOL/L;;CoreTable
+TESTO;NUM;8;BASELINE LAB VALUE: TESTOSTERONE NMOL/L;;CoreTable
+WBC;NUM;8;BASELINE LAB VALUE: WHITE BLOOD CELLS 10^9/L;;CoreTable
+CREACL;NUM;8;BASELINE LAB VALUE: CREATININE CLEARANCE ML/MIN;;CoreTable
+NA;NUM;8;BASELINE LAB VALUE: SODIUM MMOL/L;;CoreTable
+MG;NUM;8;BASELINE LAB VALUE: MAGNESIUM MMOL/L;;CoreTable
+PHOS;NUM;8;BASELINE LAB VALUE: PHOSPHORUS MMOL/L;;CoreTable
+ALB;NUM;8;BASELINE LAB VALUE: ALBUMIN G/L;;CoreTable
+TPRO;NUM;8;BASELINE LAB VALUE: TOTAL PROTEIN G/L;;CoreTable
+RBC;NUM;8;BASELINE LAB VALUE: RED BLOOD CELLS 10^12/L;;CoreTable
+LYM;NUM;8;BASELINE LAB VALUE: LYMPHOCYTES 10^9/L;;CoreTable
+BUN;NUM;8;BASELINE LAB VALUE: BLOOD UREA NITROGEN MMOL/L;;CoreTable
+CCRC;NUM;8;BASELINE LAB VALUE: CALCULATED CREATININE CLEARANCE ML/MIN;;CoreTable
+GLU;NUM;8;BASELINE LAB VALUE: GLUCOSE MMOL/L;;CoreTable
+CREACLCA;NUM;8;BASELINE LAB VALUE: CREATININE CLEARANCE CALCUL. (COCKCROFT AND GAULT) ML/MIN;;CoreTable
+NON_TARGET;CHAR;1;Baseline Non-Target Lesion(s), target vs. non-target lesion definition see wiki data description;Y means having non-target lesion, missing means no.;CoreTable
+TARGET;CHAR;1;Baseline Target Lesion(s), target vs. non-target lesion definition see wiki data description;Y means having target lesion, missing means no.;CoreTable
+BONE;CHAR;1;Baseline Bone Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+RECTAL;CHAR;1;Baseline Rectal Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+LYMPH_NODES;CHAR;1;Baseline Lymph Node Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+KIDNEYS;CHAR;1;Baseline Kidney Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+LUNGS;CHAR;1;Baseline Lung Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+LIVER;CHAR;1;Baseline Liver Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+PLEURA;CHAR;1;Baseline Pleura Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+OTHER;CHAR;1;Baseline Other Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+PROSTATE;CHAR;1;Baseline Prostate Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+ADRENAL;CHAR;1;Baseline Adrenal Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+BLADDER;CHAR;1;Baseline Bladder Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+PERITONEUM;CHAR;1;Baseline Peritoneum Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+COLON;CHAR;1;Baseline Colon Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+HEAD_AND_NECK;CHAR;1;Baseline Head and Neck Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+SOFT_TISSUE;CHAR;1;Baseline Soft Tissue Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+STOMACH;CHAR;1;Baseline Stomach Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+PANCREAS;CHAR;1;Baseline Pancreas Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+THYROID;CHAR;1;Baseline Thyroid Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+ABDOMINAL;CHAR;1;Baseline Abdominal Lesion(s);Y means having tumor metastases in this location, missing means no.;CoreTable
+ORCHIDECTOMY;CHAR;1;Prior Orchidectomy(includes bilateral);Y means history of this procedure, missing means no ;CoreTable
+PROSTATECTOMY;CHAR;1;Prior Prostatectomy;Y means history of this procedure, missing means no ;CoreTable
+TURP;CHAR;1;Prior Turp;Y means history of this procedure, missing means no ;CoreTable
+LYMPHADENECTOMY;CHAR;1;Prior Bilateral Lymphadenectomy;Y means history of this procedure, missing means no ;CoreTable
+SPINAL_CORD_SURGERY;CHAR;1;Prior Spinal Cord Surgery;Y means history of this procedure, missing means no ;CoreTable
+BILATERAL_ORCHIDECTOMY;CHAR;1;Prior Bilateral Orchidectomy;Y means history of this procedure, missing means no ;CoreTable
+PRIOR_RADIOTHERAPY;CHAR;1;Prior Radiotherapy;Y means history of radiation therapy, missing means no ;CoreTable
+ANALGESICS;CHAR;3;Prior analgesics;YES means prior use of this category of medication, missing means no;CoreTable
+ANTI_ANDROGENS;CHAR;3;Prior Anti-Androgens;YES means prior use of this category of medication, missing means no;CoreTable
+GLUCOCORTICOID;CHAR;3;Prior Glucocorticoids;YES means prior use of this category of medication, missing means no;CoreTable
+GONADOTROPIN;CHAR;3;Prior Gomadotropin;YES means prior use of this category of medication, missing means no;CoreTable
+BISPHOSPHONATE;CHAR;3;Prior Bisphosponate;YES means prior use of this category of medication, missing means no;CoreTable
+CORTICOSTEROID;CHAR;3;Prior Corticosteroid;YES means prior use of this category of medication, missing means no;CoreTable
+IMIDAZOLE;CHAR;3;Prior Imidazole;YES means prior use of this category of medication, missing means no;CoreTable
+ACE_INHIBITORS;CHAR;3;Prior ACE Inhibitors;YES means prior use of this category of medication, missing means no;CoreTable
+BETA_BLOCKING;CHAR;3;Prior Beta Blocking Agents;YES means prior use of this category of medication, missing means no;CoreTable
+HMG_COA_REDUCT;CHAR;3;Prior HMG COA Reductase Inhibitors;YES means prior use of this category of medication, missing means no;CoreTable
+ESTROGENS;CHAR;3;Prior Estrogens;YES means prior use of this category of medication, missing means no;CoreTable
+ANTI_ESTROGENS;CHAR;3;Prior Anti-Estrogens;YES means prior use of this category of medication, missing means no;CoreTable
+ARTTHROM;CHAR;1;MEDICAL HISTORY: ARTERIAL THROMBOSIS;Y means history of this diagnosis, missing means no ;CoreTable
+CEREBACC;CHAR;1;MEDICAL HISTORY: CEREBROVASCULAR ACCIDENT (HEMORRHAGIC AND/OR ISCHEMIC);Y means history of this diagnosis, missing means no ;CoreTable
+CHF;CHAR;1;MEDICAL HISTORY: CONGESTIVE HEART FAILURE;Y means history of this diagnosis, missing means no ;CoreTable
+DVT;CHAR;1;MEDICAL HISTORY: DEEP VENOUS THROMBOSIS (DVT);Y means history of this diagnosis, missing means no ;CoreTable
+DIAB;CHAR;1;MEDICAL HISTORY: DIABETES;Y means history of this diagnosis, missing means no ;CoreTable
+GASTREFL;CHAR;1;MEDICAL HISTORY: GASTROESOPHAGEAL REFLUX DISEASE (GERD);Y means history of this diagnosis, missing means no ;CoreTable
+GIBLEED;CHAR;1;MEDICAL HISTORY: GASTROINTESTINAL (GI) BLEED;Y means history of this diagnosis, missing means no ;CoreTable
+MI;CHAR;1;MEDICAL HISTORY: MYOCARDIAL INFARCTION (MI);Y means history of this diagnosis, missing means no ;CoreTable
+PUD;CHAR;1;MEDICAL HISTORY: PEPTIC ULCER DISEASE (PUD);Y means history of this diagnosis, missing means no ;CoreTable
+PULMEMB;CHAR;1;MEDICAL HISTORY: PULMONARY EMBOLISM (PE);Y means history of this diagnosis, missing means no ;CoreTable
+PATHFRAC;CHAR;1;MEDICAL HISTORY: PATHOLOGICAL BONE FRACTURES;Y means history of this diagnosis, missing means no ;CoreTable
+SPINCOMP;CHAR;1;MEDICAL HISTORY: SPINAL CORD COMPRESSION;Y means history of this diagnosis, missing means no ;CoreTable
+COPD;CHAR;1;MEDICAL HISTORY: CHRONIC OBSTRUCTIVE PULMONARY DISEASE;Y means history of this diagnosis, missing means no ;CoreTable
+MHBLOOD;CHAR;3;MEDICAL HISTORY (Body system): BLOOD & LYMPHATIC SYSTEM;YES means having history of disease in this body system, missing means No.;CoreTable
+MHCARD;CHAR;3;MEDICAL HISTORY (Body system): CARDIAC DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHCONGEN;CHAR;3;MEDICAL HISTORY (Body system): CONGENITAL, FAMILIAL & GENETIC;YES means having history of disease in this body system, missing means No.;CoreTable
+MHEAR;CHAR;3;MEDICAL HISTORY (Body system): EAR & LABYRINTH;YES means having history of disease in this body system, missing means No.;CoreTable
+MHENDO;CHAR;3;MEDICAL HISTORY (Body system): ENDOCRINE DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHEYE;CHAR;3;MEDICAL HISTORY (Body system): EYE DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHGASTRO;CHAR;3;MEDICAL HISTORY (Body system): GASTROINTESTINAL DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHGEN;CHAR;3;MEDICAL HISTORY (Body system): GEN DISORD & ADMIN SITE;YES means having history of disease in this body system, missing means No.;CoreTable
+MHHEPATO;CHAR;3;MEDICAL HISTORY (Body system): HEPATOBILIARY DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHIMMUNE;CHAR;3;MEDICAL HISTORY (Body system): IMMUNE SYSTEM DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHINFECT;CHAR;3;MEDICAL HISTORY (Body system): INFECTIONS & INFESTATIONS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHINJURY;CHAR;3;MEDICAL HISTORY (Body system): INJURY, POISON & PROCEDURAL;YES means having history of disease in this body system, missing means No.;CoreTable
+MHINVEST;CHAR;3;MEDICAL HISTORY (Body system): INVESTIGATIONS;YES means having condition reported as a result of a lab test, missing means No.;CoreTable
+MHMETAB;CHAR;3;MEDICAL HISTORY (Body system): METABOLISM & NUTRITION;YES means having history of disease in this body system, missing means No.;CoreTable
+MHMUSCLE;CHAR;3;MEDICAL HISTORY (Body system): MUSC/SKELETAL & CONNECT TISSUE;YES means having history of disease in this body system, missing means No.;CoreTable
+MHNEOPLA;CHAR;3;MEDICAL HISTORY (Body system): NEOPLASMS BENIGN, MALIG & UNSPEC;YES means having history of disease in this body system, missing means No.;CoreTable
+MHNERV;CHAR;3;MEDICAL HISTORY (Body system): NERVOUS SYSTEM DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHPSYCH;CHAR;3;MEDICAL HISTORY (Body system): PSYCHIATRIC DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHRENAL;CHAR;3;MEDICAL HISTORY (Body system): RENAL & URINARY DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+MHRESP;CHAR;3;MEDICAL HISTORY (Body system): RESP, THORACIC & MEDIASTINAL;YES means having history of disease in this body system, missing means No.;CoreTable
+MHSKIN;CHAR;3;MEDICAL HISTORY (Body system): SKIN & SUBCUTANEOUS TISSUE;YES means having history of disease in this body system, missing means No.;CoreTable
+MHSOCIAL;CHAR;3;MEDICAL HISTORY (Body system): SOCIAL CIRCUMSTANCES;YES means having personal issues that could impact condition reported, missing means No.;CoreTable
+MHSURG;CHAR;3;MEDICAL HISTORY (Body system): SURGICAL & MEDICAL PROCEDURES;YES means having history of surgical/medical procedure, missing means No.;CoreTable
+MHVASC;CHAR;3;MEDICAL HISTORY (Body system): VASCULAR DISORDERS;YES means having history of disease in this body system, missing means No.;CoreTable
+DOMAIN;CHAR;2;Domain (table) Name Abbreviation;;PriorMed
+STUDYID;CHAR;8;Study Identifier (define which trial patient belongs to);Value: EFC6546, CELGENE, ASCENT2, AZ;PriorMed
+RPT;CHAR;18;Patient ID (or dummy id);;PriorMed
+CMTRT;CHAR;200;Reported Name of Drug, Med, or Therapy  ;orginal verbatim entered into the clinical report form (CRF).   ;PriorMed
+CMDECOD;CHAR;200;Standardized Medication Name ;standardized terms created from CMTRT by the data providers. (recommeded term to use);PriorMed
+CMINTENT;CHAR;200;Intented Use of Medication;;PriorMed
+CMSCAT;CHAR;200;Subcategory for Medication;;PriorMed
+CMSSCAT;CHAR;200;Subsubcategory for Medication;;PriorMed
+CMPRE;CHAR;3;Prior to 1st treatment Flag (derived);"""YES"" for all indicating all records are baseline";PriorMed
+cmatc4;CHAR;50;Chemical Class;Medication classification (lowest level);PriorMed
+cmatc3;CHAR;50;Pharmacological Class ;Medication classification ;PriorMed
+cmatc2;CHAR;50;Therapeutic Class;Medication classification ;PriorMed
+CMATC1;CHAR;50;Anatomic Class;Medication classification (highest level);PriorMed
+CMDICTV;CHAR;30;Version of Medical Dictionary reference (MedDRA) for standardized term and classification;;PriorMed
+CMDURN;NUM;8;Duration of Medication;;PriorMed
+CMDURU;CHAR;10;Duration Unit of Medication;;PriorMed
+VISIT;CHAR;50;Visit Name (Showing visit schedule);;PriorMed
+CMDOSE;NUM;8;Dose per Administration;;PriorMed
+CMDOSFRQ;CHAR;100;Dosing Frequency per Interval;;PriorMed
+CMDOSTOT;NUM;8;Total Daily Dose;;PriorMed
+CMDOSTXT;CHAR;100;Dose Description;;PriorMed
+CMDOSU;CHAR;100;Dose Units;;PriorMed
+CMROUTE;CHAR;40;Route of Administration;;PriorMed
+CMPREREP;CHAR;1;Previously Reported Flag;Only available for StudyID='EFC6546', to flag pre-specificd med. per trial requirement;PriorMed
+CMPRN;CHAR;3;Medication PRN Flag ;"PRN means ""use as needed""";PriorMed
+CM_AE;CHAR;3;Treatment for Adverse Event;;PriorMed
+CMCAT;CHAR;200;Category for Medication;;PriorMed
+CMATC1CD;CHAR;8;Anatomic Class Code ;MedDRA code for CMATC1;PriorMed
+CMATC2CD;CHAR;8;Therapeutic Class Code  ;MedDRA code for CMATC2;PriorMed
+CMATC3CD;CHAR;8;Pharmacological Class Code;MedDRA code for CMATC3;PriorMed
+CMATC4CD;CHAR;8;Chemical Class Code ;MedDRA code for CMATC4;PriorMed
+CMATCCD;CHAR;8;ATC Code;complete MedDRA code for medication classification;PriorMed
+CMRECNO;CHAR;6;Medication Drug Record Number;;PriorMed
+CMSEQ1;CHAR;2;Medication Drug Sequence Number 1;;PriorMed
+CMSEQ2;CHAR;3;Medication Drug Sequence Number 2;;PriorMed
+CMMODIFY;CHAR;200;Modified Reported Name ;modified version of CMTRT before standardization;PriorMed
+CMSTDT_PC;NUM;8;Medication Start Date period value in days;relative days from reference day (1st treatment date for most patients);PriorMed
+CMENDT_PC;NUM;8;Medication End Date period value in days;relative days from reference day, censored at 0 to avoid confounding;PriorMed
+PER_REF_C;CHAR;30;Reference day for Lab collection day (LBDT_PC);Mostly first treatment date, small number of patients use consent date;LabValue
+DOMAIN;CHAR;2;Domain (table) Name Abbreviation;;LabValue
+STUDYID;CHAR;8;Study Identifier;Value: EFC6546, CELGENE, ASCENT2, AZ;LabValue
+RPT;CHAR;18;Patient ID (or dummy id);;LabValue
+LBCAT;CHAR;200;Category for Lab Test;;LabValue
+LBTEST;CHAR;50;Lab Test or Examination Name;Test name, recommended field to use for analysis;LabValue
+LBORRES;CHAR;60;Result or Finding in Original Units;Original result of the test, used for reference ;LabValue
+LBORRESU;CHAR;20;Unit for the Original Test Result;Unit for original result of the test, used for reference ;LabValue
+LBTOXGRC;CHAR;10;Standard Toxicity Grade Character Value;Grade 1 (Mild), Grade 2 (Moderate), Grade 3 (Severe), Grade 4 (Potentially life threatening);LabValue
+LBORNRLO;CHAR;20;Reference Range Lower Limit in Orig Test Result;;LabValue
+LBORNRHI;CHAR;20;Reference Range Upper Limit in Orig Test Result;;LabValue
+LBMETHOD;CHAR;50;Method of Test or Collection;;LabValue
+VISIT;CHAR;50;Visit Name (Showing visit schedule);;LabValue
+LBSTRESC;CHAR;60;Character Result/Finding in STD format;Standardized format of the test result, recommended field to use (Character);LabValue
+LBSTNRLO;NUM;8;Reference Range Lower Limit- Std Units;;LabValue
+LBSTNRHI;NUM;8;Reference Range Upper Limit- Std Units;;LabValue
+LBTESTCD;CHAR;8;Lab Test or Examination Short Name;Standardized code for test name, recommended field to use for analysis;LabValue
+LBSCAT;CHAR;50;Subcategory for Lab Test;;LabValue
+LBSTAT;CHAR;8;Completion Status of the Lab Test;"""NOT DONE"" means labs scheduled but not performed, should have missing value in test result";LabValue
+LBBLFL;CHAR;1;Baseline Flag for Lab Value;This is the field to use for parcing out baseline lab.;LabValue
+LBTOXGR;CHAR;1;Standard Toxicity Grade;;LabValue
+LBTOXGRN;NUM;8;Standard Toxicity Grade Numeric Code;;LabValue
+LBNRIND;CHAR;20;Reference Range Indicator;Study provided H/M/L flag (actual value could vary) for the test result according to Upper/Lower bound of range per study. Use with discretion.;LabValue
+LBNRIND2;CHAR;20;Reference Range Indicator Imputed ;Only available for StudyID='EFC6546';LabValue
+LBACPT;CHAR;15;Actual Timepoint Name;;LabValue
+LBTM;NUM;8;Time of Specimen Collection;;LabValue
+LBTX;CHAR;5;Time of Specimen Collection (Char);;LabValue
+LBDRVFL;CHAR;1;Flag for Derived value;;LabValue
+LBSTRECI;CHAR;20;Reporting Character  Result/Finding;;LabValue
+LBSTREIU;CHAR;20;Reporting  Result/Finding Unit;;LabValue
+LBSTRENI;NUM;8;Num Result/Finding in Std Units Imputed;;LabValue
+LBSTRESN;NUM;8;Numeric Result/Finding in Standard units;Standardized format of the test result, recommended to use (Numeric);LabValue
+LBSTRESU;CHAR;20;Standard Units;Unit for Standardized format of the test result, recommended to use  ;LabValue
+LBORNRU;CHAR;20;Original Units for Reference Range;;LabValue
+LBSTNRC;CHAR;200;Reference Range for Char Rslt-Std Units;;LabValue
+LBDT_PC;NUM;8;Date specimen collected period value in days;relative days from reference day (first treatment date for most patients);LabValue
+PER_REF_C;CHAR;30;Reference day for lesion assessment day (LSDT_PC);First treatment date for CELGENE & AZ, randomization date for EFC6546;MedHistory
+DOMAIN;CHAR;2;Domain (table) Name Abbreviation;ASCENT2 study did not provide event level Lesion data.;MedHistory
+STUDYID;CHAR;8;Study Identifier;Value: EFC6546, CELGENE, ASCENT2, AZ;MedHistory
+RPT;CHAR;18;Patient ID (or dummy id);;MedHistory
+VISIT;CHAR;50;Visit Name (Showing visit schedule);"Baseline lesion is defined as VISIT=""SCREENING"" or ""1""";MedHistory
+LSCAT;CHAR;200;Category for Lesions;Target vs. non-target lesion;MedHistory
+LSTEST;CHAR;40;Lesion Test Name; ;MedHistory
+LSLOC;CHAR;100;Location of Tumor; ;MedHistory
+LSLOC2;CHAR;100;Location of Tumor Grouping;group location at time, not as populated as LSLOC;MedHistory
+LSORRES;CHAR;60;Result or Finding in Original Units;Original result of the test, used for reference ;MedHistory
+LSORRESU;CHAR;20;Original Units;;MedHistory
+LSMETHOD;CHAR;50;Method of Measurement;;MedHistory
+LSSDT_P;NUM;8;Earliest Assess Date period value;Only Available for AZ post baseline (blank for the released data);MedHistory
+LSEDT_P;NUM;8;Latest Assess Date period value, 2nd ref;Only Available for AZ post baseline (blank for the released data);MedHistory
+VISITNUM;NUM;8;Visit Number;;MedHistory
+LSNO;NUM;8;Lesion Number;;MedHistory
+LSSTAT;CHAR;8;Completion Status;;MedHistory
+LSREASND;CHAR;200;Reason Not Performed;;MedHistory
+LSSLOC;CHAR;100;Location of Tumor (subcategory);more detailed location of the lesion;MedHistory
+LSSTRESC;CHAR;60;Character Result/Finding in Std Format;Standardized format of the test result, recommended field to use (Character);MedHistory
+LSSTRESN;NUM;8;Numeric Result/Finding in Standard Units;Standardized format of the test result, recommended field to use (Character);MedHistory
+LSSTRESU;CHAR;20;Standard Units;Unit for standardized format of the test result, recommended field to use ;MedHistory
+LSTESTCD;CHAR;8;Short Name of LSTEST;;MedHistory
+LSCOM;CHAR;100;Lesion Comment;;MedHistory
+LSDT_PC;NUM;8;Assessment Date period value in days;relative days from reference day (first treatment date for CELGENE & AZ, randomization date for EFC6546);MedHistory
+PER_REF_C;CHAR;30;Reference day for vital sign capture day (VSDT_PC);First treatment date for AZ and CELGENE, consent date for ASCENT2, randomization date for EFC6546;VitalSign
+DOMAIN;CHAR;2;Domain (table) Name Abbreviation;;VitalSign
+STUDYID;CHAR;8;Study Identifier;Value: EFC6546, CELGENE, ASCENT2, AZ;VitalSign
+RPT;CHAR;18;Patient ID (or dummy id);;VitalSign
+VSTEST;CHAR;40;Vital Signs Test Name;;VitalSign
+VSORRES;CHAR;20;Result or Finding in Original Units;Original value recorded for vital sign, use for reference;VitalSign
+VSORRESU;CHAR;20;Original Units;;VitalSign
+VSSTRESC;CHAR;20;Character Result/Finding in STD format;Standardized format of the test result, recommended field to use (Character);VitalSign
+VSSTRESU;CHAR;20;Standard Units;Unit for Standardized format of the test result, recommended to use  ;VitalSign
+VISIT;CHAR;50;Visit Name (Showing visit schedule);;VitalSign
+VSBLFL;CHAR;1;Baseline Flag;This is the field to use for parcing out baseline vital sign.;VitalSign
+VSACTPT;CHAR;50;Actual Timepoint Name;;VitalSign
+VSACTPTN;NUM;8;Actual Timepoint Number;;VitalSign
+VSDRVFL;CHAR;1;Derived Flag;;VitalSign
+VSSTRESN;NUM;8;Numeric Result/Finding in Standard units;Standardized format of the test result, recommended to use (Numeric);VitalSign
+VSTESTCD;CHAR;8;Vital Signs Test Short Name;;VitalSign
+VSDT_PC;NUM;8;Date taken period value in days;relative day to reference day (first treatment date for AZ and CELGENE, consent date for ASCENT2, randomization date for EFC6546) ;VitalSign
