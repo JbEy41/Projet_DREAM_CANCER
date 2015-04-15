@@ -2,4 +2,12 @@
 *.md
 *.tex
 *.swp
+*.RData
+*.Rhistory
+
+
+
+
 *.swap
+
+
