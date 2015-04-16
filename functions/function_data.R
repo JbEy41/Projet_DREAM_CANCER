@@ -4,24 +4,28 @@ library(DMwR)
 library(boot)
 library(mlogit)
 library(VGAM)
-library("kernlab", lib.loc="~/R/win-library/3.1")
+library("kernlab", lib.loc="~/R/win-library/4.1")
 
 ## fonction pour avoir le nombre d'unique d'une colonne
 funk_nb_unique <- function(data,esc){
   ## data: data.frame , esc:string
-  return(paste0(paste(esc,"nb of unique : "),NROW(unique(data[,esc]))))
+  # print(paste0(paste(esc,"nb of unique : "),NROW(unique(data[,esc]))))
+  return(NROW(unique(data[,esc])))
 }
 
 ## fonction pour avoir le nombre de na dans une colonne
 funk_nb_na <- function(data,esc){
   ## data: data.frame , esc:string
-  return(paste0(paste(esc,"nb of NA : "),sum(is.na(data[,esc]))))
+  # print(paste0(paste(esc,"nb of NA : "),sum(is.na(data[,esc]))))
+  return(sum(is.na(data[,esc])))
 }
 
 ## fonction pour avoir le nombre valeur manquante dans une colonne
 funk_nb_missings <- function(data,esc){
   ## data: data.frame , esc:string
-  return(paste0(paste(esc,"nb of missing values : "),NROW(data[(data[,esc] ==""),esc])))
+  # print(paste0(paste(esc,"nb of missing values : "),
+  #             NROW(data[(data[,esc] ==""),esc])))
+  return(NROW(data[(data[,esc] ==""),esc]))
 }
 
 ## fonction pour binarizer une colonne pour les char:
@@ -42,6 +46,7 @@ funk_binarize_char <-function(data,esc){
 ## function permettant l'évaluation des NA
 funk_check_NA <- function(base)
 {  
+  # base : data.frame
   names.others <- names(base)
   pct.missing_2 <- matrix(NA,length(base),2)
   for(i in 1:length(base))
@@ -59,7 +64,18 @@ funk_check_NA <- function(base)
   return(pct.missing_2)
 }
 
-
+# function permettant l'évaluation des missings
+funk_check_missings <- function(data){    
+    # data : data.frame
+    test = data.frame(matrix(0,NROW(names(data)),2))
+    names(test) = c("Variable","pourcentage_na")
+    for(esc in c(1:(NROW(names(data))))){
+        test[esc,] <- c(names(data)[esc],
+                        (funk_nb_missings(data,esc)*100/NROW(data)))
+    }
+    test = test[with(test, order(pourcentage_na,decreasing = T)),]
+    return(test)
+}
 
 ## function de passage des factors aux numeriques
 funk_num <-  function(data,dico){
@@ -84,6 +100,3 @@ funk_char <-  function(data,dico){
   }
   return(res)
 }
-
-
-
