@@ -13,6 +13,19 @@ funk_nb_unique <- function(data,esc){
   return(NROW(unique(data[,esc])))
 }
 
+## fonction pour avoir le nombre d'unique par colonne dans une table
+funk_check_nb_unique <- function(data){    
+    # data : data.frame
+    test = data.frame(matrix(0,NROW(names(data)),2))
+    names(test) = c("Variable","NB_unique")
+    for(esc in c(1:(NROW(names(data))))){
+        test[esc,] <- c(names(data)[esc],
+                        funk_nb_unique(data,names(data)[esc]))
+    }
+    test = test[with(test, order(NB_unique,decreasing = T)),]
+    return(test)
+}
+
 ## fonction pour avoir le nombre de na dans une colonne
 funk_nb_na <- function(data,esc){
   ## data: data.frame , esc:string
@@ -30,6 +43,7 @@ funk_nb_missings <- function(data,esc){
 
 ## fonction pour binarizer une colonne pour les char:
 funk_binarize_char <-function(data,esc){
+  # data : data.frame , esc : string
   res = data.frame(data[,esc],stringsAsFactors = FALSE)
   names(res) = esc
   res[,1] = sapply(res[,1],as.character)
@@ -99,4 +113,52 @@ funk_char <-  function(data,dico){
     res[,esc]=sapply(res[,esc],as.character)
   }
   return(res)
+}
+
+## Fonction supprimant les colonnes d'un dataframe par string
+funk_remove_names <- function(data,name_to_remove){
+    tl = c()
+    for(esc in name_to_remove){
+      tl = c(tl,grep(esc ,fixed = T, names(data)))
+    }
+    if(length(tl)>0){
+        data <- data[,-tl]
+        return(data)
+    }else{
+    print("no column to remove")
+    }
+}
+## fonction nous donnons un tableaux des valeurs des colonnes à binariser
+funk_check_binar <- function(data){    
+    # data : data.frame
+    test = funk_check_nb_unique(data)
+    name_to_binarize = test[(test[,2] == 2),1]
+    test = data.frame(matrix(0,NROW(name_to_binarize),3))
+    names(test) = c("Variable","unik1","unik2")
+    for(esc in c(1:(NROW(name_to_binarize)))){
+        test_1 = unique(data[,name_to_binarize[esc]])
+        test[esc,] <- c(name_to_binarize[esc],
+                        test_1[1],
+                        test_1[2]                        
+                        )
+    }
+    return(test)
+}
+
+## fonction nous donnos un tableaux des uniks des colonnes binariser ou non
+funk_uniks_show <- function(data){
+    max_unik = sapply(char[,test_1],unique)
+    max_unik =max(sapply(max_unik,NROW))
+    test = data.frame(matrix(0,NCOL(data),max_unik+1))
+    nam = c()
+    for(esc in c(1:(max_unik))){ nam <- c(nam,paste0("unik_",esc))}
+    names(test) = c("Variable",nam)
+    for(esc in c(1:(NROW(test)))){      
+        test_1 = unique(data[,esc])
+        test[esc,1] = names(data)[esc]
+        for(esc1 in c(1:(NROW(test_1)))){
+            test[esc,esc1+1] <- test_1[esc1]              
+        }
+    }
+    return(test)
 }
