@@ -4,7 +4,7 @@ STUDYID;CHAR;8;Study Identifier;Value: EFC6546, CELGENE, ASCENT2, AZ;CoreTable
 RPT;CHAR;18;Patient ID (or dummy id);;CoreTable
 LKADT_P;NUM;8;Last Known Alive Dt Period in days;Q1 dependent variable ;CoreTable
 DEATH;CHAR;3;Patient Died Flag;Q1 dependent variable;CoreTable
-DISCONT;CHAR;1;Discontinue Flag;Q2 dependent variable;CoreTable
+DISCONT;NUM;1;Discontinue Flag;Q2 dependent variable;CoreTable
 ENDTRS_C;CHAR;30;Discontinue Trt Reason (category);dep. var. reference variables, details see “Creation of dependent variable for Q2.docx” in the Challenge Data folder;CoreTable
 ENTRT_PC;NUM;8;Discontinue Trt Date Period in days;Q2 dependent variable ;CoreTable
 PER_REF;CHAR;30;Reference Day used for ENTRT_PC;dep. var. reference variables;CoreTable
