@@ -24,7 +24,7 @@ REGION_C;CHAR;30;Region of the World;;CoreTable
 SMOKE;CHAR;5;Ever Smoked;covariates only available in ASCENT2;CoreTable
 SMOKFREQ;CHAR;50;Smoking Frequency;covariates only available in ASCENT2;CoreTable
 SMOKSTAT;CHAR;30;Current Smoking Status;covariates only available in ASCENT2;CoreTable
-ECOG_C;CHAR;100;Baseline Patient Performance Status;0-Fully active, 1-Restricted activity, 2-No activity, capable of selfcare, 3- limited selfcare, 4-bed-bound (detail see wiki data description);CoreTable
+ECOG_C;NUM;100;Baseline Patient Performance Status;0-Fully active, 1-Restricted activity, 2-No activity, capable of selfcare, 3- limited selfcare, 4-bed-bound (detail see wiki data description);CoreTable
 TRT1_ID;CHAR;20;Treatment 1 product ;trial related information;CoreTable
 TRT2_ID;CHAR;20;Treatment 2 product (docetaxel);trial related information;CoreTable
 TRT3_ID;CHAR;20;Treatment 3 product (prednisone except AZ);trial related information;CoreTable
