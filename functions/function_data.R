@@ -4,7 +4,7 @@ library(DMwR)
 library(boot)
 library(mlogit)
 library(VGAM)
-install.packages("kernlab")
+#install.packages("kernlab")
 library("kernlab", lib.loc="~/R/win-library/4.1")
 
 ## fonction pour avoir le nombre d'unique d'une colonne
