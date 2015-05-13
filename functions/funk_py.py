@@ -70,7 +70,17 @@ def funk_enthropy(test):
     return(-sum([x*np.log(x) for x in test if x!=0]))
 
 
-
+def funk_convers_vector_num(data_char,data_num):
+    res= data_num.copy()
+    for esc in data_char:
+        test = data_num.copy()
+        test[esc] = data_char.loc[:,esc].copy()
+        test1 = test.groupby(esc).sum()
+        test1[esc] = np.unique(test[esc])
+        test = pd.merge(test,test1,left_on=esc, right_on=esc, how='outer')
+        res = pd.concat([res,test],axis=1)
+    res = res.T.drop_duplicates().T
+    return(res)
 
 
 
