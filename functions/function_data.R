@@ -4,6 +4,7 @@ library(DMwR)
 library(boot)
 library(mlogit)
 library(VGAM)
+library(data.table)
 #install.packages("kernlab")
 library("kernlab", lib.loc="~/R/win-library/4.1")
 
@@ -96,6 +97,7 @@ funk_check_missings <- function(data){
 funk_num <-  function(data,dico){
   #data : data.frame, dico : data.frame
   num_name = na.omit(dico[(dico[,"Type"] == "NUM") & (dico[,"Table"] == "CoreTable"),c("Var.Name")])
+  num_name = intersect(num_name,names(data))
   num_name = sapply(num_name,as.character)
   res = data[,num_name]
   for(esc in num_name){
