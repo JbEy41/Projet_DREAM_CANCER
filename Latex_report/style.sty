@@ -1,0 +1,180 @@
+\usepackage[utf8]{inputenc}
+\usepackage{indentfirst}
+\usepackage{url}
+\usepackage[english]{babel}
+\usepackage[svgnames]{xcolor}
+\usepackage{hyperref} % for hyperlinks
+% \usepackage{fullpage} %To reduce margins
+\usepackage[lmargin=2.5cm, rmargin=2.5cm,tmargin=1.8cm,bmargin=1.8cm]{geometry}
+
+\usepackage{graphicx}
+\usepackage[font={small,sf},skip=5pt]{caption} % Make figure caption small and bold
+\usepackage{natbib, har2nat} % Bibliography setup
+\usepackage{amsthm,amsmath,amssymb,amsfonts,dsfont} 
+\usepackage{algorithm,algorithmic} % no indent in footnotes
+\usepackage[hang,flushmargin]{footmisc}
+%% \usepackage[none]{hyphenat} % no word break, fully justified
+\usepackage{appendix}
+\usepackage{pdfpages}
+\usepackage[nottoc,numbib]{tocbibind}
+
+\usepackage{enumitem}
+\setenumerate{leftmargin=3.2em,labelsep=1em}
+\setenumerate[1]{label=(\arabic*)}
+\setenumerate[2]{label=(\alph*),topsep=0pt}
+\setenumerate[3]{label=(\roman*),topsep=0pt}
+\usepackage{multirow}
+\usepackage{amsmath}
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+
+\usepackage{titlesec}
+
+\titleformat{\chapter}[display]
+  {\normalfont\Large\bfseries}
+  {\MakeUppercase{\chaptertitlename}\ \thechapter}{16pt}{\MakeUppercase}
+
+
+%% SETTINGS AND NEW COMMANDS
+\captionsetup[figure]{labelfont=bf} % Put the caption in tables and figures in bold
+\captionsetup[table]{labelfont=bf}
+
+\renewcommand{\baselinestretch}{1.2}
+
+\setlength{\bibhang}{0pt} % No ident in bilbliography
+
+% Renew the footnote line
+\renewcommand{\footnoterule}{%
+  \kern 0pt
+  \hrule width \textwidth height 0.5pt
+  \kern 2pt
+}
+
+% Definition environment
+\newtheorem{definition}{Definition}
+% Set the hyper links
+\hypersetup{
+	backref = true,
+	pagebackref=true,
+  colorlinks = true,
+  pdfborder = {1 0 0},
+  citecolor={blue},
+  linkcolor={black},
+  urlcolor={blue}
+}
+
+% Code R
+\usepackage{listings} % To include R code
+
+
+\definecolor{Code}{rgb}{0,0,0}
+\definecolor{Decorators}{rgb}{0.5,0.5,0.5}
+\definecolor{Numbers}{rgb}{0.5,0,0}
+\definecolor{MatchingBrackets}{rgb}{0.25,0.5,0.5}
+\definecolor{Keywords}{rgb}{0,0,1}
+\definecolor{self}{rgb}{0,0,0}
+\definecolor{Strings}{rgb}{0,0.63,0}
+\definecolor{Comments}{rgb}{0.7,0.13,0.18}
+\definecolor{Backquotes}{rgb}{0,0,0}
+\definecolor{Classname}{rgb}{0,0,0}
+\definecolor{FunctionName}{rgb}{0,0,0}
+\definecolor{Operators}{rgb}{0,0,0}
+\definecolor{Background}{rgb}{0.98,0.98,0.98}
+
+
+\lstnewenvironment{language=R}[1][]{
+\lstset{
+numbers=left,
+numberstyle=\footnotesize,
+numbersep=1em,
+xleftmargin=1em,
+framextopmargin=2em,
+framexbottommargin=2em,
+showspaces=false,
+showtabs=false,
+showstringspaces=false,
+frame=single,
+breaklines=true,
+breakatwhitespace=false,
+tabsize=4,
+% Basic
+basicstyle=\ttfamily\small\setstretch{1},
+backgroundcolor=\color{Background},
+language=Python,
+% Comments
+commentstyle=\color{Comments}\slshape,
+% Strings
+stringstyle=\color{Strings},
+morecomment=[s][\color{Strings}]{"""}{"""},
+morecomment=[s][\color{Strings}]{'''}{'''},
+% keywords
+morekeywords={import,from,class,def,for,while,if,is,in,elif,else,not,and,or,print,break,continue,return,True,False,None,access,as,,del,except,exec,finally,global,import,lambda,pass,print,raise,try,assert},
+keywordstyle={\color{Keywords}\bfseries},
+% additional keywords
+morekeywords={[2]@invariant},
+keywordstyle={[2]\color{Decorators}\slshape},
+emph={self},
+emphstyle={\color{self}\slshape},
+%
+}}{}
+
+\usepackage{supertabular}
+\usepackage{array}
+
+% Equation numbering in red
+\makeatletter
+\let\reftagform@=\tagform@
+\def\tagform@#1{\maketag@@@{(\ignorespaces\textcolor{red}{#1}\unskip\@@italiccorr)}}
+\renewcommand{\eqref}[1]{\textup{\reftagform@{\ref{#1}}}}
+\makeatother
+
+% Pour le bleu 
+\renewcommand\thesection {\Roman{section}}
+\makeatletter
+
+
+\renewcommand\section{\@startsection {section}{1}{\z@}%
+                                   {- 2.7ex \@plus -1ex \@minus -.2ex}%
+                                   {1.7ex \@plus.2ex}%
+ {\Large\centering\scshape\textcolor{MidnightBlue}}}
+
+% Pour les petites boxes
+\usepackage{thmbox}
+\newtheorem[L]{thm}{Theorem}[section]
+\newcommand{\startdef}[1]{\vspace{0.4cm}
+\begin{thmbox}[S]{\textbf{Definition:} #1}}
+\newcommand{\closedef}{\end{thmbox} \vspace{0.4cm}}
+\newcommand{\startbox}[1]{\vspace{0.4cm}
+\begin{thmbox}[S]{#1}}
+\newcommand{\closebox}{\end{thmbox} \vspace{0.4cm}}
+\newcommand{\starteq}[1]{\vspace{0.4cm}
+\begin{thmbox}[S]{\textsf{\textbf{Equation:} \textit{#1}}}}
+\newcommand{\closeeq}{\end{thmbox} \vspace{0.4cm}}
+
+\newcommand{\startassum}[1]{\vspace{0.4cm}
+\begin{thmbox}[S]{\textsf{\textbf{Assumption:} \textit{#1}}}}
+\newcommand{\closeassum}{\end{thmbox} \vspace{0.4cm}}
+
+\usepackage{wrapfig}
+
+
+\date{\small \today}
+
+\usepackage{tikz}
+
+\usetikzlibrary{arrows,chains,matrix,positioning,scopes}
+%
+\makeatletter
+\tikzset{join/.code=\tikzset{after node path={%
+\ifx\tikzchainprevious\pgfutil@empty\else(\tikzchainprevious)%
+edge[every join]#1(\tikzchaincurrent)\fi}}}
+\makeatother
+%
+\tikzset{>=stealth',every on chain/.append style={join},
+         every join/.style={->}}
+\tikzstyle{labeled}=[execute at begin node=$\scriptstyle,
+   execute at end node=$]
+%
+
+
+\newcommand\numberthis{\addtocounter{equation}{1}\tag{\theequation}} % Pour numéroter une seule équation
